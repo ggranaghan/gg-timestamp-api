@@ -41,7 +41,7 @@ app.get("/api/timestamp/:date", (req, res) => {
     let regex = /[\D]/;
     if (regex.test(inputDate)) {
       res.json({
-        error: "Please enter a valid date",
+        error: "Invalid Date",
       });
     } else {
     res.json({
