@@ -20,7 +20,7 @@ function displayTimestamp(){
         document.getElementById("user-time-display").innerHTML= timeStamp
     }
     } else {
-      let tempDate = new Date(inputDate);
+      let tempDate = new Date(inputVal);
       document.getElementById("user-time-display").innerHTML= tempDate.toUTCString()
     }
   }
