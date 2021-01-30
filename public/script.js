@@ -17,12 +17,11 @@ function displayTimestamp(){
       if (regex.test(inputVal)) {
         document.getElementById("user-time-display").innerHTML= "Please enter a valid date"
       } else {
-        console.log('there')
         document.getElementById("user-time-display").innerHTML= timeStamp
     }
     } else {
-      console.log('here')
-      document.getElementById("user-time-display").innerHTML= new Date(inputVal).toUTCString()
+      let tempDate = new Date(inputDate);
+      document.getElementById("user-time-display").innerHTML= tempDate.toUTCString()
     }
   }
   else {
