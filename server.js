@@ -25,7 +25,7 @@ app.get("/api/hello", function (req, res) {
 });
 
 // This one's dones
-app.get("/api/time", function (req, res) {
+app.get("/api/timestamp", function (req, res) {
   let time = new Date();
   let timeStamp = time.toUTCString();
   res.json({
