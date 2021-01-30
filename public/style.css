@@ -1,17 +1,23 @@
 /****** Main Styling ******/
 
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto Mono', monospace;
 	font-size: 16px;
-	color: #222;
-	background-color: #FaFaFa;
+	color: #fff;
+	background-color: darkgrey;
 	text-align: center;
 	line-height: 1.4em;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 .container {
-	padding: 0;
-	margin-top: 40px;
+	padding: 0 80px;
+	margin-top: 80px;
+}
+
+h1 {
+	margin-bottom: 80px;
 }
 
 h3 {
@@ -22,15 +28,9 @@ hr {
 	margin: 25px;
 }
 
-.footer {
-	margin-top: 40px;
-}
-
 code {
   font-family: monospace;
   padding: 2px;
-  color: black;
-  background-color: #fff;
 }
 
 ul {
@@ -42,5 +42,52 @@ li {
 }
 
 a {
-	color: #2574A9;
+	color: #fff;
+}
+
+.footer {
+	position: fixed;
+	font-family: sans-serif;
+	letter-spacing: 1.2px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	background-color: lightgray;
+}
+
+.how {
+	margin-bottom: 60px;
+}
+.grid-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+button {
+  transition-duration: 0.4s;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: monospace;
+  width: 200px;
+  justify-self: center;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #000;
+  color: white;
+}
+
+.api-example {
+display: grid;
+border-right: 2px solid lightgray;
+padding: 0 20px;
+}
+
+input {
+	width: 200px;
+	justify-self: center;
+	margin-bottom: 20px;
 }

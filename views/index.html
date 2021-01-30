@@ -2,31 +2,51 @@
 
 <html>
    <head>
-      <title>Timestamp Microservice | freeCodeCamp.org</title>
-      <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <link href="style.css" rel="stylesheet" type="text/css">
-   </head>
+      <title>Timestamp API</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">       <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
 
    <body>
-    <h1>Timestamp Microservice</h1>
-    <hr />
+
     <div class="container">
-      <h3>Example Usage:</h3>
+      <h1>Timestamp API</h1>
+      <h3>How to Use</h3>
+      <p class="how">Pick an option below. In the address bar, type a custom query string containing a date after the route path. You will be directed to a page with JSON. Or, click the button to recive the current timestamp.</p>
+      
+      <div class="grid-wrapper">
+
+      <div class="api-example">
+        <p>Use for current timestamp:</p>
+       <button id="time-submit">Get Timestamp</button>
+       <code id="time-display"></code>
+       <p>Or enter a valid unix date and submit:</p>
+      <input type="text" id="user-input" placeholder="Enter Valid Date"/>
+       <button type="button" onclick="getInputValue()">Submit</button>
+       <code id="user-time-display"></code>
+    </div>
+
+    <div class="date-submit">
+      <p>Example Input:</p>
       <ul>
-        <li><a href="api/timestamp/2015-12-25">[project url]/api/timestamp/2015-12-25</a></li>
-        <li><a href="api/timestamp/1451001600000">[project url]/api/timestamp/1451001600000</a></li>
+        <li><a href="api/time/2021-01-29">/api/time/2021-01-29</a></li>
+        <li><a href="api/time/1611957466207">/api/time/1611957466207</a></li>
       </ul>
 
-      <h3>Example Output:</h3>
+      <p>Example Output:</p>
       <p>
-        <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
+        <code>{"unix":1451001600000,</code><br>
+        <code>"utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
       </p>
     </div>
-    <div class="footer">
-      <p>
-        By <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a>
-      </p>
+
+    </div>
+
+    <div class ="footer">
+      <p>made by greg granaghan</p>
+      <p>freecodecamp tutorial</p>
+      <p>winter 2021</p>
     </div>
   </body>
+  <script type="text/javascript" src="script.js"></script>
 </html>

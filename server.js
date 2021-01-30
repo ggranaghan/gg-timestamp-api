@@ -8,7 +8,7 @@ var app = express();
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 // so that your API is remotely testable by FCC 
 var cors = require('cors');
-app.use(cors({optionsSuccessStatus: 200}));  // some legacy browsers choke on 204
+app.use(cors({ optionsSuccessStatus: 200 }));  // some legacy browsers choke on 204
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
@@ -21,7 +21,41 @@ app.get("/", function (req, res) {
 
 // your first API endpoint... 
 app.get("/api/hello", function (req, res) {
-  res.json({greeting: 'hello API'});
+  res.json({ greeting: 'hello API' });
+});
+
+// This one's dones
+app.get("/api/time", function (req, res) {
+  let time = new Date();
+  let timeStamp = time.toUTCString();
+  res.json({
+    unix: Date.now(),
+    utc: timeStamp
+  });
+});
+
+//This one needs work... it works if you enter a unix time but not a date string
+app.get("/api/time/:date", (req, res) => {
+  let inputDate = req.params.date
+  if (isNaN(new Date(inputDate))) {
+    let regex = /[\D]/;
+    if (regex.test(inputDate)) {
+      res.json({
+        error: "Please enter a valid date",
+      });
+    } else {
+    res.json({
+      unix: inputDate,
+      utc: new Date(parseInt(inputDate)).toUTCString(),
+    });
+  }
+  } else {
+    let tempTime = Date.parse(inputDate)
+    res.json({
+      unix: new Date(inputDate).getTime().toString(),
+      utc: new Date(tempTime).toUTCString(),
+    });
+  }
 });
 
 
