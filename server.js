@@ -53,8 +53,8 @@ app.get("/api/timestamp/:date", (req, res) => {
     let tempTime = Date.parse(inputDate)
     let tempDate = new Date(inputDate);
     res.json({
-      unix: new Date(inputDate).getTime().toString(),
-      utc: new Date(tempDate).toUTCString(),
+      unix: new Date(inputDate).getTime(),
+      utc: tempDate.toUTCString(),
     });
   }
 });
