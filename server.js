@@ -35,7 +35,7 @@ app.get("/api/time", function (req, res) {
 });
 
 //This one needs work... it works if you enter a unix time but not a date string
-app.get("/api/time/:date", (req, res) => {
+app.get("/api/timestamp/:date", (req, res) => {
   let inputDate = req.params.date
   if (isNaN(new Date(inputDate))) {
     let regex = /[\D]/;
