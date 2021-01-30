@@ -45,7 +45,7 @@ app.get("/api/timestamp/:date", (req, res) => {
       });
     } else {
     res.json({
-      unix: inputDate,
+      unix: parseInt(inputDate),
       utc: new Date(parseInt(inputDate)).toUTCString(),
     });
   }
