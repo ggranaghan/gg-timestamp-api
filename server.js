@@ -37,6 +37,9 @@ app.get("/api/timestamp", function (req, res) {
 //This one needs work... it works if you enter a unix time but not a date string
 app.get("/api/timestamp/:date", (req, res) => {
   let inputDate = req.params.date
+  if (/\d{5,}/.test(dateString)) {
+    const dateInt = parseInt(dateString);
+  }
   if (isNaN(new Date(inputDate))) {
     let regex = /[\D]/;
     if (regex.test(inputDate)) {
